@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>color-flipper</title>
+    </head>
+      
+   
+<body>
+    
+     <link rel = "stylesheet" href  ="style.css"> 
+   
+    
+        <main>
+        <div class = "container">
+        <h2>Background-color:<span class = "color">#f1f5f8</span></h2>
+        <button class = "btn btn-hero" id = "btn">click-me</button>
+        
+        </div>    
+    
+    
+    
+    </main>
+         <script type = "text/javascript">
+    
+           const btn = document.getElementById("btn");
+           const color = document.querySelector(".color");
+           
+             
+          const numbers = "0123456789";
+          const alphabets = "abcdef";
+             
+          function getRandomNumber(){
+              return numbers[Math.floor(Math.random() * numbers.length)]
+          }
+        
+         function getRandomAlphabet(){
+             return alphabets[Math.floor(Math.random() * alphabets.length)]
+         }
+             console.log(getRandomNumber());
+             console.log(getRandomAlphabet());
+             
+             
+             function getRandom(){
+                let arr =[];
+                 arr.push(getRandomNumber());
+                 arr.push(getRandomAlphabet());
+                 return arr[Math.floor(Math.random() * arr.length)]
+             }
+             btn.addEventListener("click", () => {
+                 let hex = "#"
+                 for(let i=0; i<6; i++){
+                     hex += getRandom()
+                 }
+                 document.body.style.backgroundColor = hex;
+                 color.textContent = hex;
+             });
+          
+    </script>
+
+
+    
+    </body>  
+    
+   
+</html>
